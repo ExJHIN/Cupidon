@@ -181,7 +181,7 @@ body {
 }
 
 .buttton:disabled {
-    opacity: 0.6;
+    opacity: 0.95;
 }
 
 .form__input {
@@ -560,6 +560,22 @@ input:invalid {
         height: 100%;
     }
 
+    .header__paragraph_u {
+        height: 81px;
+        margin: 10px auto;
+        font-family: 'Open Sans', sans-serif;
+        font-style: normal;
+        text-align: center;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 27px;
+        text-transform: capitalize;
+        padding: 0;
+        color: #ffffff;
+        text-decoration: none;
+        box-sizing: border-box;
+        z-index: 4;  
+    }
     #form .contain__two .indicator {
         position: absolute;
         right: 20px;
