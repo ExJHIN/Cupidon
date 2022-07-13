@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" href="./page/index.css" />
+        <title>Cupid Online</title>
+    </head>
+    <body class="pr">
+        <header class="header">
+            <div class="logo">
+                <img
+                    class="logo__header"
+                    src="./image/_Group_ 1.svg"
+                    alt="logo"
+                />
+            </div>
+            <h1 class="header__title">Find your perfect match</h1>
+            <p class="header__paragraph">
+                It’s never too late start dating. Join and find your pefect
+                match on <a href="#top" class="link"> <br />Cupid Online</a>
+            </p>
+        </header>
+        <section class="content">
+            <form
+                class="form"
+                name="formNameOne"
+                id="form"
+                action="/apply/"
+                method="POST"
+            >
+                <h2 class="form__title">Find something real</h2>
+                <div class="contain">
+                    <input
+                        class="form__input_right"
+                        type="text"
+                        name="fname"
+                        maxlength="18"
+                        required
+                        placeholder="First Name"
+                    />
+                    <input
+                        type="text"
+                        class="form__input_left"
+                        name="lname"
+                        maxlength="18"
+                        required
+                        placeholder="Last Name"
+                    />
+                </div>
+                <div class="contain__two">
+                    <input
+                        type="email"
+                        class="form__input"
+                        id="email"
+                        name="email"
+                        placeholder="E-Mail"
+                        maxlength="30"
+                        onkeyup="validate()"
+                        required
+                        pattern="\S+@[a-z]+.[a-z]+"
+                    />
+                    <span class="indicator"></span>
+                </div>
+
+                <label class="checkbox__button">
+                    <input class="checkbox" type="checkbox" required />
+                    <span class="check__box"
+                        >By signing up, you agree to Privacy Policy and Terms of
+                        Use</span
+                    >
+                </label>
+                <div class="inputbox">
+                    <button
+                        type="submit"
+                        value="button"
+                        class="buttton"
+                        disabled
+                    >
+                        Let’s get started
+                    </button>
+                </div>
+            </form>
+        </section>
+        <section class="image__content">
+            <img class="image" src="./image/_Group_ 2.png" alt="image" />
+            <h2 class="footer__link">
+                <a href="./privacyPolicy.html" class="footer__link-1"
+                    >Privacy Policy </a
+                >|<a href="./unsubscribe.html" class="footer__link-1"
+                    >Unsubscribe</a
+                >
+            </h2>
+        </section>
+        <script defer src="./script/index.js"></script>
+    </body>
+</html>
