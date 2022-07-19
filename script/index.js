@@ -1,4 +1,10 @@
-const apiUrl = 'https://intrust.inboxsuite.com/?apikey=5sj44xkbovgkn3ef';
+function regDate() {
+    let date = new Date().toISOString();
+    let dateTimeZone = date.match(/\.?[^.]+$/)[0];
+    let newDate = date.replace(dateTimeZone, '');
+
+    return newDate;
+}
 
 function getFormData(formNode) {
     const fname = formNode.querySelector('[name="fname"]').value;
@@ -22,29 +28,32 @@ function convertDataToXWWWFormUrlencodedFormat(obj) {
     }, '');
 }
 
-async function sendData(body) {
+async function sendData(body, apiUrl) {
     try {
         await fetch(apiUrl, {
             method: 'POST',
+            mode: 'no-cors',
             headers: {
-                'Content-Type':
-                    'application/x-www-form-urlencoded;charset=UTF-8',
+                'Content-Type': 'application/json;charset=utf-8',
             },
             body,
         });
     } catch (e) {}
 }
 
-async function handleFormSubmit(event) {
-    event.preventDefault();
 
+
+async function handleFormSubmit(event,formNode) {
+    event.preventDefault();
+    let sourceurl = document.location.protocol + '//' + document.location.host + document.location.pathname;
     const formData = getFormData(event.target);
     const encodedFormData = convertDataToXWWWFormUrlencodedFormat(formData);
-
-    await sendData(encodedFormData);
-
+    const apiUrl = `https://intrust.inboxsuite.com/?apikey=5sj44xkbovgkn3ef&email=${formData.email}&ip=${ip}&regdate=${regDate()}&sourceurl=${sourceurl}&fname=${formData.fname}&lname=${formData.lname}`;
+    await sendData(encodedFormData, apiUrl);
     onSuccess(event.target);
 }
+
+
 
 function onSuccess(formNode) {
     alert('Your application has been sent!');

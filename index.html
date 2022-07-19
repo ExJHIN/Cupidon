@@ -14,7 +14,7 @@
                     class="logo__header"
                     src="./image/_Group_ 1.svg"
                     alt="logo"
-                />
+                    />
             </div>
             <h1 class="header__title">Find your perfect match</h1>
             <p class="header__paragraph">
@@ -28,8 +28,7 @@
                 name="formNameOne"
                 id="form"
                 action="/apply/"
-                method="POST"
-            >
+                method="POST">
                 <h2 class="form__title">Find something real</h2>
                 <div class="contain">
                     <input
@@ -39,7 +38,7 @@
                         maxlength="18"
                         required
                         placeholder="First Name"
-                    />
+                        />
                     <input
                         type="text"
                         class="form__input_left"
@@ -47,7 +46,7 @@
                         maxlength="18"
                         required
                         placeholder="Last Name"
-                    />
+                        />
                 </div>
                 <div class="contain__two">
                     <input
@@ -60,24 +59,22 @@
                         onkeyup="validate()"
                         required
                         pattern="\S+@[a-z]+.[a-z]+"
-                    />
+                        />
                     <span class="indicator"></span>
                 </div>
 
                 <label class="checkbox__button">
                     <input class="checkbox" type="checkbox" required />
-                    <span class="check__box"
-                        >By signing up, you agree to Privacy Policy and Terms of
-                        Use</span
-                    >
+                    <span class="check__box">By signing up, you agree to Privacy
+                        Policy and Terms of
+                        Use</span>
                 </label>
                 <div class="inputbox">
                     <button
                         type="submit"
                         value="button"
                         class="buttton"
-                        disabled
-                    >
+                        disabled>
                         Let’s get started
                     </button>
                 </div>
@@ -86,13 +83,20 @@
         <section class="image__content">
             <img class="image" src="./image/_Group_ 2.png" alt="image" />
             <h2 class="footer__link">
-                <a href="./privacyPolicy.html" class="footer__link-1"
-                    >Privacy Policy </a
-                >|<a href="./unsubscribe.html" class="footer__link-1"
-                    >Unsubscribe</a
-                >
+                <a href="./privacyPolicy.html" class="footer__link-1">Privacy
+                    Policy </a>|<a href="./unsubscribe.html"
+                    class="footer__link-1">Unsubscribe</a>
             </h2>
         </section>
+        <script type="application/javascript">
+            let ip;
+            function getIP(json) {
+              ip = json.ip;
+            }
+          </script>
+          <script type="application/javascript" src="https://api.ipify.org?format=jsonp&callback=getIP"></script>
         <script defer src="./script/index.js"></script>
     </body>
+
+
 </html>
